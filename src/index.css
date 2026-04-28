@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* NeuroDrive Academy - Dark cyan neon theme */
+@layer base {
+  :root {
+    --background: 222 45% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 40% 10%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 40% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 187 100% 50%;
+    --primary-foreground: 222 47% 8%;
+    --primary-glow: 187 100% 65%;
+
+    --secondary: 222 35% 14%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 222 30% 16%;
+    --muted-foreground: 215 20% 70%;
+
+    --accent: 187 100% 50%;
+    --accent-foreground: 222 47% 8%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --success: 142 76% 45%;
+    --warning: 38 95% 55%;
+
+    --border: 222 35% 18%;
+    --input: 222 35% 14%;
+    --ring: 187 100% 50%;
+
+    --radius: 0.75rem;
+
+    --gradient-hero: radial-gradient(ellipse at center, hsl(187 100% 50% / 0.15), transparent 60%);
+    --gradient-text: linear-gradient(135deg, hsl(187 100% 50%), hsl(200 100% 60%));
+    --shadow-glow: 0 0 40px hsl(187 100% 50% / 0.4);
+    --shadow-card: 0 4px 30px hsl(222 60% 2% / 0.5);
+
+    --sidebar-background: 222 45% 7%;
+    --sidebar-foreground: 210 40% 90%;
+    --sidebar-primary: 187 100% 50%;
+    --sidebar-primary-foreground: 222 47% 8%;
+    --sidebar-accent: 222 35% 14%;
+    --sidebar-accent-foreground: 187 100% 50%;
+    --sidebar-border: 222 35% 16%;
+    --sidebar-ring: 187 100% 50%;
+  }
+
+  .dark {
+    --background: 222 45% 6%;
+    --foreground: 210 40% 98%;
+    --card: 222 40% 10%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 40% 10%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 187 100% 50%;
+    --primary-foreground: 222 47% 8%;
+    --secondary: 222 35% 14%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 222 30% 16%;
+    --muted-foreground: 215 20% 70%;
+    --accent: 187 100% 50%;
+    --accent-foreground: 222 47% 8%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 222 35% 18%;
+    --input: 222 35% 14%;
+    --ring: 187 100% 50%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { @apply dark; }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -20%, hsl(187 100% 50% / 0.12), transparent),
+      radial-gradient(ellipse 60% 50% at 80% 100%, hsl(280 100% 50% / 0.08), transparent);
+    background-attachment: fixed;
+  }
+  h1, h2, h3, h4 { font-family: 'Space Grotesk', 'Inter', sans-serif; @apply tracking-tight; }
+}
+
+@layer components {
+  .text-gradient {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .glow-cyan { box-shadow: var(--shadow-glow); }
+  .glow-text { text-shadow: 0 0 30px hsl(187 100% 50% / 0.6); }
+  .card-surface {
+    @apply bg-card border border-border rounded-2xl;
+    box-shadow: var(--shadow-card);
+  }
+}
